@@ -1,7 +1,9 @@
-from flask import Flask, jsonify
+import datetime
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/api/v1')
+
+@app.route('/api/v1/time')
 def index():
-    return jsonify(message='Hello World!')
+    return {'time': datetime.datetime.utcnow()}
